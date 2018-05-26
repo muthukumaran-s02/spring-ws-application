@@ -1,2 +1,2 @@
 # spring-ws-application
-Test app
+Test Spring boot application
