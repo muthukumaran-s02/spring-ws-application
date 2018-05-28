@@ -15,11 +15,13 @@ public class HelloController {
 
     @RequestMapping("/")
     public String index() throws Exception{
-        System.out.println("Controller instance " + this.hashCode()); 
-        Thread.sleep(1000);
+        final long processingTime = 1000  * 1; //1 sec
+        //System.out.println("Controller instance " + this.hashCode()); 
 
-        System.out.println("Request id" + request.getParameter("name"));
-        System.out.println("Request "+ request.getClass() + "/" + request.hashCode());
+        long currentSystemTime = System.currentTimeMillis();
+        while(currentSystemTime + processingTime  > System.currentTimeMillis());
+        //System.out.println("Request id" + request.getParameter("name"));
+        //System.out.println("Request "+ request.getClass() + "/" + request.hashCode());
         return "Greetings from Spring Boot!";
     }
 
